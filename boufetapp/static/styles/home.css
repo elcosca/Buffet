@@ -1,0 +1,77 @@
+.scrollbox{
+    position: relative;
+    left: 70px;
+    top: -200px;
+}
+
+.totalp{
+    position: relative;
+    left: 450px;
+    top: 110px;
+}
+
+.totalpagar{
+    position: relative;
+    left: 450px;
+    top: 220px;
+}
+
+.imputnumber{
+width:30px;
+height:50px;
+}
+
+.btn-group{
+    position: relative;
+    left: 700px;
+    top: 40px;
+}
+
+.h1{
+    position: relative;
+    top: 30px;
+    left: 70px;
+    text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F,
+		0 0 0.2em #87F
+}
+
+.aclaracion1{
+    position: relative;
+    left: 790px;
+    top: 10px;
+}
+
+.btn-group2{
+    position: relative;
+    left: 700px;
+    top: 110px;
+}
+
+.aclaracion2{
+    position: relative;
+    left: 790px;
+    top: 80px;
+}
+
+.nomap{
+    position: relative;
+    left: 710px;
+    top: 205px;
+}
+
+.enviar{
+    position: relative;
+    left: 450px;
+    top: 150px;
+}
+
+.titulo{
+    position: relative;
+    left: 400px;
+    width: 570px;
+    height: 140px;
+}
+
+body {
+  background-color:#58FAF4;
+}

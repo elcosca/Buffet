@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link href="/static/styles/home.css" rel="stylesheet" type="text/css">
+
+<script>
+function myFunction1() {
+    var a = parseInt(document.getElementById("Milanesa").value);
+    var b = parseInt(document.getElementById("Tartin").value);
+    var c = parseInt(document.getElementById("Medialuna").value);
+    var d = parseInt(document.getElementById("Coca-Cola 600ml").value);
+    var e = parseInt(document.getElementById("Lays").value);
+    var total = +(a + b + c + d + e);
+    document.getElementById("cant").innerHTML = total;
+
+    var precioa = 30;
+    var preciob = 20;
+    var precioc = 40;
+    var preciod = 25;
+    var precioe = 15;
+    var total2 = +(a * 30 + b * 20 + c * 40 + d * 25 + e * 15);
+    document.getElementById("cant2").innerHTML = total2;
+
+}
+
+</script>
+
+
+</head>
+
+<head bgcolor="#1C1C1C">
+</head>
+
+<body>
+
+<title>Boufet</title>
+
+<img class="titulo" src="static/images/logo.png"></img>
+
+<h1  class="h1"><b>Productos</b></h1>
+
+<div class="totalp">
+    <b>
+        <h4>
+            Total productos:
+        </h4>
+    </b>
+<p id="cant"></p>
+</div>
+
+<div class="totalpagar">
+    <b>
+        <h4>
+            Total a pagar:
+        </h4>
+    </b>
+<p id="cant2"></p>
+</div>
+
+<div class="btn-group">
+<select type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+  <option value="11:30">11:30</option>
+  <option value="12:00">12:00</option>
+  <option value="12:30">12:30</option>
+  <option value="13:00">13:00</option>
+</select>
+</div>
+
+
+
+<h5 class="aclaracion1">Elija el horario en el que su pedido sera entregado</h5>
+
+
+<div class="btn-group2">
+  <button type="button" class="btn btn-primary dropdown-toggle"
+          data-toggle="dropdown">
+    Aula <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <h6 style="text-align: center;">Primer piso</h6>
+    <li role="Piso" class="divider"></li>
+    <li><a href="#">A</a></li>
+    <li><a href="#">B</a></li>
+    <li><a href="#">C</a></li>
+    <li role="Piso" class="divider"></li>
+    <h6 style="text-align: center;">Segundo piso</h6>
+    <li role="Piso" class="divider"></li>
+    <li><a href="#">A</a></li>
+    <li><a href="#">B</a></li>
+    <li><a href="#">C</a></li>
+  </ul>
+</div>
+
+<h5 class="aclaracion2">Seleccione en el aula en la que se encuentra</h5>
+
+<form action="demo_form.asp" class="nomap">
+  Nombre y apellido: <input type="text" name="usrname"><br>
+</form>
+
+<div class="enviar"><a href="#" class="btn btn-lg btn-success">Enviar pedido <span class="glyphicon glyphicon-thumbs-up"></span></a></div>
+
+<div class="scrollbox" style="width:220px;height:450px;line-height:3em;overflow:scroll;padding:5px;background-color:#FFFFFF;color:#714D03;scrollbar-base-color:#DEBB07;">
+     {% for p in productos %}
+    {{p.nombre_del_producto }}
+    {{p.precio|linebreaks }}
+        <img src="/static/images/{{p.nombre_del_producto }}.jpg"  style="width:80px;height:65px;">
+        <div class="imputnumber">
+        <form action="demo_form.asp">
+        <input id="{{p.nombre_del_producto}}" type="number" name="points" value="0" step="1" min="0" max="{{p.stock}}">
+        <a onclick="myFunction1()" href="#" class="btn btn-xs btn-info">Agregar <span class="glyphicon glyphicon-shopping-cart"></span></a>
+    </div><br>
+     {% endfor %}
+    </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<html>
+
+ {% for p in productos %}
+    {{p.nombre_del_producto }}
+    {{p.precio|linebreaks }}
+--------------------------<br>
+ {% endfor %}
+
+</html>
