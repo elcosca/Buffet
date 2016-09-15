@@ -84,19 +84,43 @@ function myFunction1() {
 </select>
 </div>
 
+<!--
 <div class="checkboxpiso">
 
 <form action="">
 <input type="checkbox" name="piso" value="Planta baja">Planta baja<br>
 <input type="checkbox" name="piso" value="Planta alta">Planta alta
 </form>
+-->
+
+<div class="radiuspiso">
+<form method="get" action="http://aprenderaprogramar.com/action.php">
+Seleccione el piso del aula:
+<br />
+<input name="intereses" type="radio" value="primerpiso" />Primer piso
+<br />
+<input name="intereses" type="radio" value="segundopiso" />Segundo piso
+</form>
+</div>
 
 </div>
 
 <h5 class="aclaracion2">Seleccione en el aula en la que se encuentra</h5>
 
-<form action="demo_form.asp" class="nomap">
-  Nombre y apellido: <input type="text" name="usrname"><br>
+<!--
+<form action="demo_form.asp" >
+  Nombre y apellido: <input href="#" type="text" name="usrname"><br>
+</form>
+-->
+
+<form action="action_page.php" class="nombreapellido">
+  Nombre:<br>
+  <input type="text" name="nombre" value="">
+  <br>
+  Apellido:<br>
+  <input type="text" name="apellido" value="">
+  <br><br>
+  <input type="submit" value="Aceptar">
 </form>
 
 <div class="enviar"><a href="#" class="btn btn-lg btn-success">Enviar pedido <span class="glyphicon glyphicon-thumbs-up"></span></a></div>
