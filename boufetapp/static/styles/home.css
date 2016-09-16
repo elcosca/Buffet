@@ -84,3 +84,14 @@ body {
     left: 700px;
     top: 120px;
 }
+
+.recuadro{
+    position: relative;
+    border-style: solid;
+    left: 400px;
+    top: -850px;
+    width:800px;
+    height:550px;
+    border-width: 5px;
+
+}

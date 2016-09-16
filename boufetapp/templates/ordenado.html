@@ -30,18 +30,23 @@ function myFunction1() {
 
 </script>
 
-
+<title>Buffet</title>
 </head>
 
 <head bgcolor="#1C1C1C">
 </head>
 
 <body>
-<title>Buffet</title>
 
 <img class="titulo" src="static/images/logo.png"></img>
 
+<div class="izquierda">
+
 <h1  class="h1"><b>Productos</b></h1>
+
+
+<div class="recuadro">
+
 
 <div class="totalp">
     <b>
@@ -126,6 +131,7 @@ Seleccione el piso del aula:
 
 <div class="enviar"><a href="#" class="btn btn-lg btn-success">Enviar pedido <span class="glyphicon glyphicon-thumbs-up"></span></a></div>
 
+</div>
 
 <div class="scrollbox" style="width:180px;height:450px;line-height:3em;overflow:scroll;padding:5px;background-color:#FFFFFF;color:#714D03;scrollbar-base-color:#DEBB07;">
      {% for p in productos %}
@@ -140,6 +146,11 @@ ___________________
     </div><br>
      {% endfor %}
     </div>
+<!--
+</div>
+-->
+
+
 
 </body>
 </html>
