@@ -95,3 +95,9 @@ body {
     border-width: 5px;
 
 }
+
+.formulario{
+    position: relative;
+    left: 70px;
+    top: 700px;
+}

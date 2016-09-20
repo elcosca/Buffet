@@ -61,6 +61,16 @@ function myFunction1() {
 <p id="cant2"></p>
 </div>
 
+<div class="formulario">
+{% block content %}
+        <h1>Nuevo Pedido</h1>
+        <form method="POST" class="pedido-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Guardar</button>
+        </form>
+    {% endblock %}
+</div>
+
 <div class="btn-group">
 <select type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
   <option value="11:30">11:30</option>
