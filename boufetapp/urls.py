@@ -5,8 +5,6 @@ from . import views
 urlpatterns = [
         url(r'^$', views.vistainicio),
         url(r'^productos/', views.vistaproductos),
-        url(r'^nuevopedido/$', views.nuevopedido, name='nuevopedido'),
     ]
-
 
 

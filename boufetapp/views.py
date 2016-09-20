@@ -7,9 +7,17 @@ from .forms import PedidoForm
 from django.utils import timezone
 
 
-
 def vistainicio(request):
-    form = PedidoForm()
+    if request.method == "PEDIDO":
+        form = PedidoForm(request.PEDIDO)
+    if form.is_valid():
+                pedido = form.save(commit=False)
+                pedido.author = request.user
+                pedido.published_date = timezone.now()
+                pedido.save()
+                return redirect('boufetapp.views.vistainicio', pk=pedido.pk)
+    else:
+            form = PedidoForm()
     productos = Productos.objects.all()
     return render(request, 'inicio.html', {'productos': productos, 'form' : form})
 
@@ -27,12 +35,3 @@ def vistapedidos(request):
 def nuevopedido(request):
         form = PedidoForm()
         return render(request, 'inicio.html', {'form': form})
-        if form.is_valid():
-                Pedido = form.save(commit=False)
-                Pedido.author = request.user
-                Pedido.published_date = timezone.now()
-                Pedido.save()
-                return redirect('buffetapp.views.nuevopedido', pk=Pedido.pk)
-        else:
-            form = PedidoForm()
-        return render(request, 'buffetapp/inicio.html', {'form': form})
