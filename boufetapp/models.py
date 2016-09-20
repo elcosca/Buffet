@@ -30,16 +30,16 @@ class Aula (models.Model):
 
 
 class Pedido (models.Model):
-    #id_del_pedido = models.IntegerField()
+    id_del_pedido = models.CharField(max_length=20)
     nombre_del_alumno = models.CharField(max_length=20)
     nombre_del_curso = models.ForeignKey('Cursos')
     #nombre_del_producto = models.ForeignKey('Productos')
-    milanesaCantidad = models.IntegerField()
-    coca_colaCantidad = models.IntegerField()
-    tartinCantidad = models.IntegerField()
-    laysCantidad = models.IntegerField()
-    horario_de_entrega = models.DateTimeField()
+    milanesaCantidad = models.CharField(max_length=20)
+    coca_colaCantidad = models.CharField(max_length=20)
+    tartinCantidad = models.CharField(max_length=20)
+    laysCantidad = models.CharField(max_length=20)
+    horario_de_entrega = models.DateTimeField(default=timezone.now)
     aula_de_entrega = models.ForeignKey('Aula')
 
     def __str__(self):
-        return "alumno: "+ self.nombre_del_alumno + "curso: "+self.nombre_del_curso.nombre_del_curso + "cantidad_milanesa: "+ str(self.milanesaCant)
+        return self.id_del_pedido
