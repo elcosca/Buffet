@@ -137,19 +137,7 @@ Seleccione el piso del aula:
 <div class="enviar"><a href="#" class="btn btn-lg btn-success">Enviar pedido <span class="glyphicon glyphicon-thumbs-up"></span></a></div>
 
 
-<div class="scrollbox" style="width:180px;height:450px;line-height:3em;overflow:scroll;padding:5px;background-color:#FFFFFF;color:#714D03;scrollbar-base-color:#DEBB07;">
-     {% for p in productos %}
-___________________
-    <b>{{p.nombre_del_producto }}</b>
-    {{p.precio|linebreaks }}
-        <img src="/static/images/{{p.nombre_del_producto }}.jpg"  style="width:80px;height:65px;">
-        <div class="imputnumber">
-        <form action="demo_form.asp">
-        <input id="{{p.nombre_del_producto}}" type="number" name="points" value="0" step="1" min="0" max="{{p.stock}}">
-        <a onclick="myFunction1()" href="#" class="btn btn-xs btn-info">Agregar <span class="glyphicon glyphicon-shopping-cart"></span></a>
-    </div><br>
-     {% endfor %}
-    </div>
+
 
 </body>
 </html>

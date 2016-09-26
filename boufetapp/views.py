@@ -8,14 +8,13 @@ from django.utils import timezone
 
 
 def vistainicio(request):
-    if request.method == "PEDIDO":
-        form = PedidoForm(request.PEDIDO)
+    form = PedidoForm()
+    if request.method == "POST":
+        form = PedidoForm(request.POST)
     if form.is_valid():
                 pedido = form.save(commit=False)
-                pedido.author = request.user
-                pedido.published_date = timezone.now()
                 pedido.save()
-                return redirect('boufetapp.views.vistainicio', pk=pedido.pk)
+                return redirect('/')
     else:
             form = PedidoForm()
     productos = Productos.objects.all()
